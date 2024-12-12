@@ -28,6 +28,8 @@ pipeline {
                 sh 'terraform validate'
             }
         }
+    }
+    
     post {
         success {
             echo 'Pipeline succeeded!'

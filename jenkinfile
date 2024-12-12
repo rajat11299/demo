@@ -5,6 +5,7 @@ pipeline {
     }
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
+        PATH = "${env.PATH}:/var/lib/jenkins/tools/org.jenkinsci.plugins.terraform.TerraformInstallation/terraform"
     }
     
     stages {

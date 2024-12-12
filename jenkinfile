@@ -3,7 +3,6 @@ pipeline {
     
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
-        TF_VAR_project_id = credentials('gcp-project-id')
     }
     
     stages {
@@ -18,8 +17,8 @@ pipeline {
             steps {
                 sh '''
                     terraform init \
-                    -backend-config="bucket=${TF_STATE_BUCKET}" \
-                    -backend-config="prefix=terraform/state"
+                    -backend-config="bucket=terraform-backend1123" \
+                    -backend-config="prefix=terraform1/state"
                 '''
             }
         }

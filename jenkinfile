@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/your-org/your-terraform-repo.git'
+                url: 'https://github.com/rajat11299/demo.git'
             }
         }
         

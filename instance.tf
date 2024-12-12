@@ -43,6 +43,7 @@ resource "google_compute_instance" "example_instance" {
 variable "project_id" {
   description = "The ID of the GCP project"
   type        = string
+  default     = "leafy-valor-443511-q0"
 }
  
 variable "region" {

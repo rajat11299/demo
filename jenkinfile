@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        terraform 'terraform'
+    terraform 'terraform' // Matches the name in Global Tool Configuration
     }
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
@@ -18,6 +18,8 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh '''
+                    which terraform
+                    terraform version
                     terraform init \
                     -backend-config="bucket=terraform-backend1123" \
                     -backend-config="prefix=terraform1/state"

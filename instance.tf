@@ -22,6 +22,7 @@ terraform {
 }
  
 # Example: Create a Google Compute Engine instance
+/*
 resource "google_compute_instance" "example_instance" {
   name         = "example-instance1"
   machine_type = "e2-medium"
@@ -58,3 +59,4 @@ variable "region" {
   type        = string
   default     = "us-central1"
 }
+*/

@@ -4,7 +4,7 @@ pipeline {
     terraform 'terraform' // Matches the name in Global Tool Configuration
     }
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-service-account')
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('pipeline-service-account')
         PATH = "${env.PATH}:/var/lib/jenkins/tools/org.jenkinsci.plugins.terraform.TerraformInstallation/terraform"
     }
     

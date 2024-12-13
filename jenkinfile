@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('pipeline-service-account')
-        PATH = "${env.PATH}:/var/lib/jenkins/tools/org.jenkinsci.plugins.terraform.TerraformInstallation/terraform"
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('pipeline-service-account') 
     }
     stages {
         stage('Checkout') {

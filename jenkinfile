@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-    terraform 'terraform' // Matches the name in Global Tool Configuration
+    terraform 'terraform' // Matches the name in Global Tool Configurations
     }
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('pipeline-service-account')

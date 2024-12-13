@@ -49,7 +49,7 @@ pipeline {
                 expression { params.RUN_TERRAFORM_PLAN }
             }
             steps {
-                sh 'terraform apply -auto-approve'
+                sh 'terraform plan'
             }
         }
 

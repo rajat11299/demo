@@ -17,6 +17,9 @@ pipeline {
         }
         
         stage('Terraform Init') {
+            when {
+                expression { return params.RUN_TERRAFORM_INIT }
+            }
             steps {
                 sh '''
                     which terraform
@@ -30,12 +33,18 @@ pipeline {
         }
         
         stage('Terraform Validate') {
+            when {
+                expression { return params.RUN_TERRAFORM_VALIDATE }
+            }
             steps {
                 sh 'terraform validate'
                 sh 'terraform apply -auto-approve'
             }
         }
         stage('Terraform Destroy') {
+            when {
+                expression { return params.RUN_TERRAFORM_DESTROY }
+            }
             steps {
                 sh 'terraform destroy -auto-approve'
             }

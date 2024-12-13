@@ -23,7 +23,8 @@ pipeline {
                     terraform version
                     terraform init \
                     -backend-config="bucket=terraform-backend1123" \
-                    -backend-config="prefix=terraform1/state"
+                    -backend-config="prefix=terraform1/state" \
+                    -force-copy
                 '''
             }
         }

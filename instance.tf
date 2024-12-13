@@ -13,6 +13,13 @@ provider "google" {
   project = var.project_id
   region  = var.region
 }
+
+terraform {
+  backend "gcs" {
+    bucket  = "terraform-backend1123"
+    prefix  = "terraform1/state"
+  }
+}
  
 # Example: Create a Google Compute Engine instance
 resource "google_compute_instance" "example_instance" {

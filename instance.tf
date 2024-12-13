@@ -16,7 +16,7 @@ provider "google" {
  
 # Example: Create a Google Compute Engine instance
 resource "google_compute_instance" "example_instance" {
-  name         = "example-instance"
+  name         = "example-instance1"
   machine_type = "e2-medium"
   zone         = "${var.region}-a"
  

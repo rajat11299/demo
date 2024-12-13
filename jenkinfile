@@ -23,7 +23,7 @@ pipeline {
                     terraform version
                     terraform init \
                     -backend-config="bucket=terraform-backend1123" \
-                    -backend-config="prefix=terraform1/state" -y
+                    -backend-config="prefix=terraform1/state" -yes
                 '''
             }
         }

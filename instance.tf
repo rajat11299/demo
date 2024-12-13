@@ -48,15 +48,17 @@ resource "google_compute_instance" "example_instance" {
 }
  
 # variables.tf
-variable "project_id" {
-  description = "The ID of the GCP project"
-  type        = string
-  default     = "leafy-valor-443511-q0"
-}
- 
+
 variable "region" {
   description = "The GCP region for resources"
   type        = string
   default     = "us-central1"
 }
 */
+
+variable "project_id" {
+  description = "The ID of the GCP project"
+  type        = string
+  default     = "leafy-valor-443511-q0"
+}
+ 

@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v4
  
     - name: Terraform Setup
-      uses: ./composite-action
+      uses: ./.github/actions/terraform-setup
       with:          
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
           service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}

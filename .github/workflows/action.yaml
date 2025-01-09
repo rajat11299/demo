@@ -1,0 +1,27 @@
+# Composite action for common Terraform tasks
+# File: .github/actions/terraform-setup/action.yml
+name: 'Terraform Setup'
+description: 'Sets up GCP authentication and initializes Terraform'
+ 
+runs:
+  using: "composite"
+  steps:
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: ${{ inputs.gcp_credentials }}
+        
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+      
+    - name: Terraform Init
+      shell: bash
+      run: terraform init
+      
+    - name: Terraform Format Check
+      shell: bash
+      run: terraform fmt -check
+      
+    - name: Terraform Validate
+      shell: bash
+      run: terraform validate
